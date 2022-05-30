@@ -8,14 +8,20 @@ insert into tb_usuario(nm_usuario, ds_email, ds_senha)
 select 	id_usuario     id,
 		nm_usuario     nome,
         ds_email       email
-from tb_usuario
-where ds_email     = 'admin@admin.com.br'
-	and ds_senha   = '1234';
+ from   tb_usuario
+ where  ds_email     = 'admin@admin.com.br'
+	and ds_senha     =  '1234';
     
--- CSU02: cdastrar novo filme 
-insert into tb_filmes(id_usuario, nm_filme, ds_sinopse, vl_avaliacao, dt_lancamento, bt_disponivel, img_filme)  
-			   values(1, 'Harr-Potter', 'Filme bem tops', 8.2, '2012-02-11', true, '/storage/filme/dfasfsdf.jpg');
+-- CSU02: cadastrar novo filme 
+insert into tb_filmes(id_usuario, nm_filme, ds_sinopse, vl_avaliacao, dt_lancamento, bt_disponivel)  
+			   values(1, 'Harr-Potter', 'Filme bem tops', 8.2, '2012-02-11', true);
+
+-- CSU2.1: alterar imagem 
+update tb_filmes
+	set img_filme      = '/storage/filme/dfasfsdf.jpg'
+where id_filme = 1;
 			
+
 -- CSU03: alterar filme 
 update tb_filmes
 	set nm_filme    = 'Harr-Potter e a Pedra filosofal',
@@ -23,7 +29,6 @@ update tb_filmes
         vl_avaliacao = 9.2,
         dt_lançamento = '2010-05-03',
         bt_disponivel  = true,
-        img_filme      = '/storage/filme/dfasfsdf.jpg'
 where id_filme = 1;
 
 -- CSU04: remover filme 
