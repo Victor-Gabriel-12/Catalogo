@@ -26,7 +26,7 @@ where id_filme = 1;
 update tb_filmes
 	set nm_filme    = 'Harr-Potter e a Pedra filosofal',
 		ds_sinopse  = 'Filme bem tops',
-        vl_avaliacao = 9.2,
+        vl_avalicao = 9.2,
         dt_lançamento = '2010-05-03',
         bt_disponivel  = true,
 where id_filme = 1;
@@ -38,7 +38,7 @@ delete from tb_filme
 -- CSU05: consltar todos os filmes
 select 	id_filme      id,
 		nm_filme      nome,
-        vl_avalicao   avaliacao,
+        vl_avaliacao   avaliacao,
         dt_lancamento lancamento,
         bt_disponivel disponivel
 from tb_filmes;
